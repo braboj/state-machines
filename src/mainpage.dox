@@ -1,0 +1,98 @@
+/*! @mainpage Documentation
+
+@section S1 Specification
+
+@image html FSM_Specification.png
+
+@section S2 Design considerations
+
+The implementation shall divide the state machine in 4 main parts:
+
+1. Initialization
+2. Event registration
+3. Transition to the next state
+4. Action of the new state
+
+The state machine will loop from step 2 to 4. There are two main approaches
+to implement to required logic.
+
+@subsection S21 Code-driven switching logic
+The first option is to implement the switching logic by code. This approach
+has the advantage of being descriptive and easy to maintain for state machines
+with a small amount of states. In order to reduce the complexity of the code, the state machine
+is divided into several sublayers.
+
+@image html FSM_Approach_01.png
+
+
+@subsection S22 Table-drive switching logic
+The second is to use code, which describes the behavior of the state machine. This
+approach reduces the written code greatly and it is useful for more complex implementations.
+The configuration of the state machine is done via tables, without changing the source code.
+
+@image html FSM_Approach_02.png
+
+@section S3 Installation
+
+1. Copy the zipped project \b Hilscher.zip to a local folder
+2. Unzip it and go to the folder \b \\Hilscher\\bin
+3. Start the file with the name \b Hilscher_A.exe for code-based switching
+4. Start the file with the name \b Hilscher_B.exe for table-driven switching
+
+@section S4 User interactions
+
+@subsection s41 Step 1: User entry
+
+After the program is started, the user sees a welcome screen with some basic instructions.
+In this state the user is allowed to enter symbols until some special keys are detected:
+
+\>> ENTERKEY : bring the state machine to the PRINT_F (printing forward) state <br>
+\>> SPACEKEY : clear the user input <br>
+
+@image html FSM_01.png
+
+@subsection s42 Step 2: Printing in forward direction
+
+In this state the state machine prints the symbols as entered by the user.
+The user might leave this state by using the following keys:
+
+\>> ENTERKEY  : bring the state machine to the PRINT_R (printing reverse) state <br>
+\>> BACKSPACE : go back to the ENTRY state <br>
+\>> SPACEKEY  : reset the user input  <br>
+
+@image html FSM_02.png
+
+@subsection s43 Step 3: Printing in reverse direction
+
+In this state the state machine prints the symbols enter by the user in reverse.
+The user might leave this state by using the following keys:
+
+\>> ENTERKEY  : bring the state machine to the CLEANUP state <br>
+\>> BACKSPACE : go back to the PRINT_F(printing forward) state <br>
+
+@image html FSM_03.png
+
+@subsection s44 Step 4: Back to entry state
+
+By using the BACKSPACE key the user might bring the state machine from
+the PRINT_F(printing forward) or PRINT_R (printing reverse) to the ENTRY state.
+In this case the program shows all the symbols entered by the user.
+
+@image html FSM_04.png
+
+@subsection s45 Step 5: Cleanup
+
+The cleanup state allows the user to clear the current user input. The state can
+be change only by pressing the ENTERKEY.
+
+@image html FSM_05.png
+
+@subsection s46 Step 6: New entry
+
+The user is allowed to enter new text again.
+
+@image html FSM_06.png
+
+
+
+*/
