@@ -9,7 +9,7 @@ interface that can either
 
 ## Environment
 
-The project was developed using the following tools:
+The project used the following tools and libraries:
 
 - GCC compiler
 - Windows 7 or later
