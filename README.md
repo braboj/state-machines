@@ -1,19 +1,22 @@
 # Hilscher DTC Technical Task
 
 ## Task Description
-Implement the followin state diagram in C.
+Implement the following state diagram in C. The state machine represents a 
+interface that can either 
 
-![task state machine](assets/task_state_machine.png)
+![task state machine](assets/images/task_state_machine.png)
 
 
-## Pre-requisites
+## Environment
+
+The project was developed using the following tools:
 
 - GCC compiler
 - Windows 7 or later
+- CodeBlocks IDE
+- Doxygen
 
 ## How to run the code
-
-### Select one of the following options:
 
 1. Uncomment FSM_A or FSM_B in the ./src/main.c file to run the respective state machine.
 2. Uncomment the TEST macro in the ./src/main.c file to run the test cases.
